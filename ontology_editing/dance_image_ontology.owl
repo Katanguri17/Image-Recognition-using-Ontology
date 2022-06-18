@@ -1,0 +1,594 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#"
+     xml:base="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled -->
+
+    <owl:AnnotationProperty rdf:about="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#hasContentProperty -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#hasContentProperty"/>
+    
+
+
+    <!-- http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#hasCostume -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#hasCostume">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#hasDancerObjProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#hasDancer -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#hasDancer">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#hasContentProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#hasDancerObjProperty -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#hasDancerObjProperty"/>
+    
+
+
+    <!-- http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#hasHeadPosition -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#hasHeadPosition">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#hasStaticObjProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#hasImage -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#hasImage">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#hasContentProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#hasLeftHandMudra -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#hasLeftHandMudra">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#hasStaticObjProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#hasLegPosition -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#hasLegPosition">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#hasStaticObjProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#hasOrientation -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#hasOrientation">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#hasStaticObjProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#hasRightHandMudra -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#hasRightHandMudra">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#hasStaticObjProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#hasSamyuktaMudra -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#hasSamyuktaMudra">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#hasStaticObjProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#hasStatic -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#hasStatic">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#hasContentProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#hasStaticObjProperty -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#hasStaticObjProperty"/>
+    
+
+
+    <!-- http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#hasTorsoPosition -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#hasTorsoPosition">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#hasStaticObjProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#hasDanceName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#hasDanceName">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#hasStaticProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#hasDanceTime -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#hasDanceTime">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#hasStaticProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#hasDancerAge -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#hasDancerAge">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#hasDancerProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#hasDancerGender -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#hasDancerGender">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#hasDancerProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#hasDancerName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#hasDancerName">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#hasDancerProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#hasDancerProperty -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#hasDancerProperty"/>
+    
+
+
+    <!-- http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#hasFileExtension -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#hasFileExtension">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#hasFileProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#hasFileName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#hasFileName">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#hasFileProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#hasFileProperty -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#hasFileProperty"/>
+    
+
+
+    <!-- http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#hasFileSize -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#hasFileSize">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#hasFileProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#hasStaticProperty -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#hasStaticProperty"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#AsamyuktaMudra -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#AsamyuktaMudra">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#Hastamudra"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#SamyuktaMudra"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#Content -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#Content">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#hasDancer"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#Dancer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#hasImage"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#Image"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#hasStatic"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#Static"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#Costume -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#Costume"/>
+    
+
+
+    <!-- http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#Dancer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#Dancer">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#hasCostume"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#Costume"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#hasDancerAge"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#hasDancerGender"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#hasDancerName"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#Hastamudra -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#Hastamudra">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#AsamyuktaMudra"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#SamyuktaMudra"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#HeadPosition -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#HeadPosition"/>
+    
+
+
+    <!-- http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#Image -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#Image">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#hasFileExtension"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#hasFileName"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#hasFileSize"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#LegPosition -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#LegPosition"/>
+    
+
+
+    <!-- http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#Orientation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#Orientation"/>
+    
+
+
+    <!-- http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#SamyuktaMudra -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#SamyuktaMudra">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#Hastamudra"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#Static -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#Static">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#hasLeftHandMudra"/>
+                                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#AsamyuktaMudra"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#hasRightHandMudra"/>
+                                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#AsamyuktaMudra"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#hasSamyuktaMudra"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#SamyuktaMudra"/>
+                    </owl:Restriction>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#hasHeadPosition"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#HeadPosition"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#hasLegPosition"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#LegPosition"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#hasOrientation"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#Orientation"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#hasTorsoPosition"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#TorsoPosition"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#hasDanceName"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#hasDanceTime"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#TorsoPosition -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#TorsoPosition"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#Dancer1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#Dancer1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#Dancer"/>
+        <hasDancerAge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">24</hasDancerAge>
+        <hasDancerGender>F</hasDancerGender>
+        <hasDancerName>A</hasDancerName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#HeadPosition"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#LegPosition"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#TorsoPosition"/>
+        </owl:members>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Rules
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#p">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#a">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S1</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#Dancer"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#p"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#hasDancerAge"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#p"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#a"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                        <swrl:builtin rdf:resource="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#select"/>
+                        <swrl:arguments rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#p"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#a"/>
+                        </swrl:arguments>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                <swrl:builtin rdf:resource="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#orderBy"/>
+                                <swrl:arguments rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#a"/>
+                                </swrl:arguments>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

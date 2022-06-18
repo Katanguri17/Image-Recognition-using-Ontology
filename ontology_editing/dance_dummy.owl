@@ -1,0 +1,427 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xml:base="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology"
+         xmlns="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#"
+         xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+         xmlns:swrl2="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#">
+
+<owl:Ontology rdf:about="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology"/>
+
+<owl:ObjectProperty rdf:about="#hasContentProperty"/>
+
+<owl:ObjectProperty rdf:about="#hasCostume">
+  <rdfs:subPropertyOf rdf:resource="#hasDancerObjProperty"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasDancerObjProperty"/>
+
+<owl:ObjectProperty rdf:about="#hasDancer">
+  <rdfs:subPropertyOf rdf:resource="#hasContentProperty"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasHeadPosition">
+  <rdfs:subPropertyOf rdf:resource="#hasStaticObjProperty"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasStaticObjProperty"/>
+
+<owl:ObjectProperty rdf:about="#hasImage">
+  <rdfs:subPropertyOf rdf:resource="#hasContentProperty"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasLeftHandMudra">
+  <rdfs:subPropertyOf rdf:resource="#hasStaticObjProperty"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasLegPosition">
+  <rdfs:subPropertyOf rdf:resource="#hasStaticObjProperty"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasOrientation">
+  <rdfs:subPropertyOf rdf:resource="#hasStaticObjProperty"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasRightHandMudra">
+  <rdfs:subPropertyOf rdf:resource="#hasStaticObjProperty"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasSamyuktaMudra">
+  <rdfs:subPropertyOf rdf:resource="#hasStaticObjProperty"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasStatic">
+  <rdfs:subPropertyOf rdf:resource="#hasContentProperty"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasTorsoPosition">
+  <rdfs:subPropertyOf rdf:resource="#hasStaticObjProperty"/>
+</owl:ObjectProperty>
+
+<owl:DatatypeProperty rdf:about="#hasDanceName">
+  <rdfs:subPropertyOf rdf:resource="#hasStaticProperty"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasStaticProperty"/>
+
+<owl:DatatypeProperty rdf:about="#hasDanceTime">
+  <rdfs:subPropertyOf rdf:resource="#hasStaticProperty"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasDancerAge">
+  <rdfs:subPropertyOf rdf:resource="#hasDancerProperty"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasDancerProperty"/>
+
+<owl:DatatypeProperty rdf:about="#hasDancerGender">
+  <rdfs:subPropertyOf rdf:resource="#hasDancerProperty"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasDancerName">
+  <rdfs:subPropertyOf rdf:resource="#hasDancerProperty"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasFileExtension">
+  <rdfs:subPropertyOf rdf:resource="#hasFileProperty"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasFileProperty"/>
+
+<owl:DatatypeProperty rdf:about="#hasFileName">
+  <rdfs:subPropertyOf rdf:resource="#hasFileProperty"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasFileSize">
+  <rdfs:subPropertyOf rdf:resource="#hasFileProperty"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+</owl:DatatypeProperty>
+
+<owl:AnnotationProperty rdf:about="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+
+<owl:Class rdf:about="#AsamyuktaMudra">
+  <rdfs:subClassOf rdf:resource="#Hastamudra"/>
+  <owl:disjointWith rdf:resource="#SamyuktaMudra"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Hastamudra">
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:unionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="#AsamyuktaMudra"/>
+        <rdf:Description rdf:about="#SamyuktaMudra"/>
+      </owl:unionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+</owl:Class>
+
+<owl:Class rdf:about="#SamyuktaMudra">
+  <rdfs:subClassOf rdf:resource="#Hastamudra"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Content">
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#hasDancer"/>
+      <owl:someValuesFrom rdf:resource="#Dancer"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#hasImage"/>
+      <owl:someValuesFrom rdf:resource="#Image"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#hasStatic"/>
+      <owl:someValuesFrom rdf:resource="#Static"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#Dancer">
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#hasCostume"/>
+      <owl:someValuesFrom rdf:resource="#Costume"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#hasDancerAge"/>
+      <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#hasDancerGender"/>
+      <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#hasDancerName"/>
+      <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#Image">
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#hasFileExtension"/>
+      <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#hasFileName"/>
+      <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#hasFileSize"/>
+      <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#Static">
+  <rdfs:subClassOf>
+    <owl:Class>
+      <owl:unionOf rdf:parseType="Collection">
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <owl:Restriction>
+              <owl:onProperty rdf:resource="#hasLeftHandMudra"/>
+              <owl:someValuesFrom rdf:resource="#AsamyuktaMudra"/>
+            </owl:Restriction>
+            <owl:Restriction>
+              <owl:onProperty rdf:resource="#hasRightHandMudra"/>
+              <owl:someValuesFrom rdf:resource="#AsamyuktaMudra"/>
+            </owl:Restriction>
+          </owl:intersectionOf>
+        </owl:Class>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#hasSamyuktaMudra"/>
+          <owl:someValuesFrom rdf:resource="#SamyuktaMudra"/>
+        </owl:Restriction>
+      </owl:unionOf>
+    </owl:Class>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#hasHeadPosition"/>
+      <owl:someValuesFrom rdf:resource="#HeadPosition"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#hasLegPosition"/>
+      <owl:someValuesFrom rdf:resource="#LegPosition"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#hasOrientation"/>
+      <owl:someValuesFrom rdf:resource="#Orientation"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#hasTorsoPosition"/>
+      <owl:someValuesFrom rdf:resource="#TorsoPosition"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#hasDanceName"/>
+      <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#hasDanceTime"/>
+      <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#Costume"/>
+
+<owl:Class rdf:about="#HeadPosition"/>
+
+<owl:Class rdf:about="#LegPosition"/>
+
+<owl:Class rdf:about="#Orientation"/>
+
+<owl:Class rdf:about="#TorsoPosition"/>
+
+<Dancer rdf:about="#Dancer1">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasDancerAge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">24</hasDancerAge>
+  <hasDancerGender>F</hasDancerGender>
+  <hasDancerName>A</hasDancerName>
+</Dancer>
+
+<swrl:Variable rdf:about="#p"/>
+
+<swrl:Variable rdf:about="#a"/>
+
+<Dancer rdf:about="#Dancer3">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasDancerAge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20</hasDancerAge>
+  <hasDancerGender rdf:datatype="http://www.w3.org/2001/XMLSchema#string">F</hasDancerGender>
+  <hasDancerName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">d3</hasDancerName>
+</Dancer>
+
+<Dancer rdf:about="#Dancer4">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasDancerAge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">21</hasDancerAge>
+  <hasDancerGender rdf:datatype="http://www.w3.org/2001/XMLSchema#string">F</hasDancerGender>
+  <hasDancerName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">d4</hasDancerName>
+</Dancer>
+
+<Dancer rdf:about="#Dancer5">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasDancerAge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">22</hasDancerAge>
+  <hasDancerGender rdf:datatype="http://www.w3.org/2001/XMLSchema#string">F</hasDancerGender>
+  <hasDancerName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">d5</hasDancerName>
+</Dancer>
+
+<Dancer rdf:about="#Dancer6">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasDancerAge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">23</hasDancerAge>
+  <hasDancerGender rdf:datatype="http://www.w3.org/2001/XMLSchema#string">F</hasDancerGender>
+  <hasDancerName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">d6</hasDancerName>
+</Dancer>
+
+<Dancer rdf:about="#Dancer7">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasDancerAge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">24</hasDancerAge>
+  <hasDancerGender rdf:datatype="http://www.w3.org/2001/XMLSchema#string">F</hasDancerGender>
+  <hasDancerName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">d7</hasDancerName>
+</Dancer>
+
+<Dancer rdf:about="#Dancer8">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasDancerAge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">25</hasDancerAge>
+  <hasDancerGender rdf:datatype="http://www.w3.org/2001/XMLSchema#string">F</hasDancerGender>
+  <hasDancerName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">d8</hasDancerName>
+</Dancer>
+
+<Dancer rdf:about="#Dancer9">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasDancerAge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">26</hasDancerAge>
+  <hasDancerGender rdf:datatype="http://www.w3.org/2001/XMLSchema#string">F</hasDancerGender>
+  <hasDancerName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">d9</hasDancerName>
+</Dancer>
+
+<Dancer rdf:about="#Dancer10">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasDancerAge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">27</hasDancerAge>
+  <hasDancerGender rdf:datatype="http://www.w3.org/2001/XMLSchema#string">F</hasDancerGender>
+  <hasDancerName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">d10</hasDancerName>
+</Dancer>
+
+<Dancer rdf:about="#Dancer11">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasDancerAge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">28</hasDancerAge>
+  <hasDancerGender rdf:datatype="http://www.w3.org/2001/XMLSchema#string">F</hasDancerGender>
+  <hasDancerName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">d11</hasDancerName>
+</Dancer>
+
+<Dancer rdf:about="#Dancer12">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasDancerAge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">29</hasDancerAge>
+  <hasDancerGender rdf:datatype="http://www.w3.org/2001/XMLSchema#string">F</hasDancerGender>
+  <hasDancerName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">d12</hasDancerName>
+</Dancer>
+
+<swrl:Imp>
+  <swrl:body>
+    <swrl:AtomList>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#Dancer"/>
+          <swrl:argument1 rdf:resource="#p"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <swrl:AtomList>
+          <rdf:first>
+            <swrl:DatavaluedPropertyAtom>
+              <swrl:propertyPredicate rdf:resource="#hasDancerAge"/>
+              <swrl:argument1 rdf:resource="#p"/>
+              <swrl:argument2 rdf:resource="#a"/>
+            </swrl:DatavaluedPropertyAtom>
+          </rdf:first>
+          <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+        </swrl:AtomList>
+      </rdf:rest>
+    </swrl:AtomList>
+  </swrl:body>
+  <swrl:head>
+    <swrl:AtomList>
+      <rdf:first>
+        <swrl:BuiltinAtom>
+          <swrl:builtin rdf:resource="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#select"/>
+          <swrl:arguments>
+            <rdf:Description>
+              <rdf:first rdf:resource="#p"/>
+              <rdf:rest>
+                <rdf:Description>
+                  <rdf:first rdf:resource="#a"/>
+                  <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                </rdf:Description>
+              </rdf:rest>
+            </rdf:Description>
+          </swrl:arguments>
+        </swrl:BuiltinAtom>
+      </rdf:first>
+      <rdf:rest>
+        <swrl:AtomList>
+          <rdf:first>
+            <swrl:BuiltinAtom>
+              <swrl:builtin rdf:resource="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#orderBy"/>
+              <swrl:arguments>
+                <rdf:Description>
+                  <rdf:first rdf:resource="#a"/>
+                  <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                </rdf:Description>
+              </swrl:arguments>
+            </swrl:BuiltinAtom>
+          </rdf:first>
+          <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+        </swrl:AtomList>
+      </rdf:rest>
+    </swrl:AtomList>
+  </swrl:head>
+  <swrl2:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl2:isRuleEnabled>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S1</rdfs:label>
+</swrl:Imp>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="#HeadPosition"/>
+    <rdf:Description rdf:about="#LegPosition"/>
+    <rdf:Description rdf:about="#TorsoPosition"/>
+  </owl:members>
+</owl:AllDisjointClasses>
+
+
+</rdf:RDF>
