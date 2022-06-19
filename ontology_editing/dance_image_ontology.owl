@@ -229,6 +229,15 @@
     
 
 
+    <!-- http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#hasFilePath -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#hasFilePath">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#hasFileProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#hasFileProperty -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#hasFileProperty"/>
@@ -370,6 +379,12 @@
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#hasFilePath"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#hasFileSize"/>
                 <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
             </owl:Restriction>
@@ -466,28 +481,6 @@
     <!-- http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#TorsoPosition -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#TorsoPosition"/>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Individuals
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#Dancer1 -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#Dancer1">
-        <rdf:type rdf:resource="http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#Dancer"/>
-        <hasDancerAge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">24</hasDancerAge>
-        <hasDancerGender>F</hasDancerGender>
-        <hasDancerName>A</hasDancerName>
-    </owl:NamedIndividual>
     
 
 
