@@ -114,7 +114,7 @@ def annotate_img_terminalUI():
     
     print('++ Add static description ++')
     dance_name=input('\__ Enter dance name: ')
-    if (input("Press 'A' for Asamyukta mudra and 'S' for Samyukta mudra: ")).lower=='a':
+    if (input("Press 'A' for Asamyukta mudra and 'S' for Samyukta mudra: ")).lower()=='a':
         print('List of Asamyukta mudra: ')
         onto.Hastamudra.print_asamyukta()
         left_mudra=int(input('\__ Enter hastamudra ID performed on left hand (refer to list for ID): '))

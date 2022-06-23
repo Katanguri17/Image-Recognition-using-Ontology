@@ -290,8 +290,6 @@
   </rdfs:subClassOf>
 </owl:Class>
 
-<owl:Class rdf:about="#Costume"/>
-
 <owl:Class rdf:about="#HeadPosition"/>
 
 <owl:Class rdf:about="#LegPosition"/>
@@ -299,6 +297,103 @@
 <owl:Class rdf:about="#Orientation"/>
 
 <owl:Class rdf:about="#TorsoPosition"/>
+
+<owl:Class rdf:about="#Costume"/>
+
+<Content rdf:about="#Content0">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasDancer rdf:resource="#Dancer0"/>
+  <hasImage rdf:resource="#Image0"/>
+  <hasStatic rdf:resource="#Static0"/>
+</Content>
+
+<Dancer rdf:about="#Dancer0">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasDancerAge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20</hasDancerAge>
+  <hasDancerGender rdf:datatype="http://www.w3.org/2001/XMLSchema#string">F</hasDancerGender>
+  <hasDancerId rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasDancerId>
+  <hasDancerName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">d0</hasDancerName>
+</Dancer>
+
+<Image rdf:about="#Image0">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasFileExtension rdf:datatype="http://www.w3.org/2001/XMLSchema#string">jpg</hasFileExtension>
+  <hasFileName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">H0</hasFileName>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/rounak/Documents/onto/environment/Ontology-editing-and-Query-processing/data/Hand1-20220127T142046Z-001/Hand1/H0.jpg</hasFilePath>
+  <hasFileSize rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3176315</hasFileSize>
+</Image>
+
+<Static rdf:about="#Static0">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasSamyuktaMudra rdf:resource="#baraha_mudra"/>
+  <hasDanceName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Some dance step name</hasDanceName>
+</Static>
+
+<SamyuktaMudra rdf:about="#baraha_mudra">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasMudraId rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</hasMudraId>
+</SamyuktaMudra>
+
+<Content rdf:about="#Content1">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasDancer rdf:resource="#Dancer1"/>
+  <hasImage rdf:resource="#Image1"/>
+  <hasStatic rdf:resource="#Static1"/>
+</Content>
+
+<Dancer rdf:about="#Dancer1">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasDancerAge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">21</hasDancerAge>
+  <hasDancerGender rdf:datatype="http://www.w3.org/2001/XMLSchema#string">M</hasDancerGender>
+  <hasDancerId rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</hasDancerId>
+  <hasDancerName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rahul</hasDancerName>
+  <hasDancerName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">d1</hasDancerName>
+</Dancer>
+
+<Image rdf:about="#Image1">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasFileExtension rdf:datatype="http://www.w3.org/2001/XMLSchema#string">JPG</hasFileExtension>
+  <hasFileName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">H1</hasFileName>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/rounak/Documents/onto/environment/Ontology-editing-and-Query-processing/data/Hand1-20220127T142046Z-001/Hand1/H1.JPG</hasFilePath>
+  <hasFileSize rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5886710</hasFileSize>
+</Image>
+
+<Static rdf:about="#Static1">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasSamyuktaMudra rdf:resource="#pushpaputa_mudra"/>
+  <hasDanceName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Some dance step II</hasDanceName>
+</Static>
+
+<SamyuktaMudra rdf:about="#pushpaputa_mudra">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasMudraId rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">33</hasMudraId>
+</SamyuktaMudra>
+
+<Content rdf:about="#Content2">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasImage rdf:resource="#Image2"/>
+  <hasStatic rdf:resource="#Static2"/>
+</Content>
+
+<Image rdf:about="#Image2">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasFileExtension rdf:datatype="http://www.w3.org/2001/XMLSchema#string">JPG</hasFileExtension>
+  <hasFileName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">H2</hasFileName>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/rounak/Documents/onto/environment/Ontology-editing-and-Query-processing/data/Hand1-20220127T142046Z-001/Hand1/H2.JPG</hasFilePath>
+  <hasFileSize rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5854276</hasFileSize>
+</Image>
+
+<Static rdf:about="#Static2">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasLeftHandMudra rdf:resource="#katakamukha_mudra"/>
+  <hasRightHandMudra rdf:resource="#katakamukha_mudra"/>
+  <hasDanceName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Some dance step III</hasDanceName>
+</Static>
+
+<AsamyuktaMudra rdf:about="#katakamukha_mudra">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasMudraId rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20</hasMudraId>
+</AsamyuktaMudra>
 
 <Costume rdf:about="#Costume0">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
@@ -319,22 +414,6 @@
 <Costume rdf:about="#Costume4">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
 </Costume>
-
-<Dancer rdf:about="#Dancer0">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <hasDancerAge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20</hasDancerAge>
-  <hasDancerGender rdf:datatype="http://www.w3.org/2001/XMLSchema#string">F</hasDancerGender>
-  <hasDancerId rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasDancerId>
-  <hasDancerName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">d0</hasDancerName>
-</Dancer>
-
-<Dancer rdf:about="#Dancer1">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <hasDancerAge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">21</hasDancerAge>
-  <hasDancerGender rdf:datatype="http://www.w3.org/2001/XMLSchema#string">M</hasDancerGender>
-  <hasDancerId rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</hasDancerId>
-  <hasDancerName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">d1</hasDancerName>
-</Dancer>
 
 <Dancer rdf:about="#Dancer10">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
@@ -434,11 +513,6 @@
   <hasMudraId rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</hasMudraId>
 </AsamyuktaMudra>
 
-<SamyuktaMudra rdf:about="#baraha_mudra">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <hasMudraId rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</hasMudraId>
-</SamyuktaMudra>
-
 <AsamyuktaMudra rdf:about="#bhramara_mudra">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   <hasMudraId rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</hasMudraId>
@@ -509,11 +583,6 @@
   <hasMudraId rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">19</hasMudraId>
 </SamyuktaMudra>
 
-<AsamyuktaMudra rdf:about="#katakamukha_mudra">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <hasMudraId rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20</hasMudraId>
-</AsamyuktaMudra>
-
 <SamyuktaMudra rdf:about="#katakavardhana_mudra">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   <hasMudraId rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">21</hasMudraId>
@@ -578,11 +647,6 @@
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
   <hasMudraId rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">32</hasMudraId>
 </AsamyuktaMudra>
-
-<SamyuktaMudra rdf:about="#pushpaputa_mudra">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <hasMudraId rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">33</hasMudraId>
-</SamyuktaMudra>
 
 <SamyuktaMudra rdf:about="#sakata_mudra">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
@@ -668,26 +732,63 @@
 
 <swrl:Variable rdf:about="#a"/>
 
-<Image rdf:about="#Image0">
+<Image rdf:about="#Image3">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/rounak/Documents/onto/environment/Ontology-editing-and-Query-processing/data/Hand1-20220127T142046Z-001/Hand1/H0.jpg</hasFilePath>
-  <hasFileName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">H0</hasFileName>
-  <hasFileExtension rdf:datatype="http://www.w3.org/2001/XMLSchema#string">jpg</hasFileExtension>
-  <hasFileSize rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3176315</hasFileSize>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/rounak/Documents/onto/environment/Ontology-editing-and-Query-processing/data/Hand1-20220127T142046Z-001/Hand1/H4.JPG</hasFilePath>
+  <hasFileName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">H4</hasFileName>
+  <hasFileExtension rdf:datatype="http://www.w3.org/2001/XMLSchema#string">JPG</hasFileExtension>
+  <hasFileSize rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5836913</hasFileSize>
 </Image>
 
-<Static rdf:about="#Static0">
+<Dancer rdf:about="#Dancer11">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <hasSamyuktaMudra rdf:resource="#baraha_mudra"/>
-  <hasDanceName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Some dance step name</hasDanceName>
+  <hasDancerId rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">11</hasDancerId>
+  <hasDancerName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">d11</hasDancerName>
+  <hasDancerAge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">30</hasDancerAge>
+  <hasDancerGender rdf:datatype="http://www.w3.org/2001/XMLSchema#string">M</hasDancerGender>
+</Dancer>
+
+<Static rdf:about="#Static3">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasSamyuktaMudra rdf:resource="#verunda_mudra"/>
+  <hasDanceName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Some dance step III</hasDanceName>
 </Static>
 
-<Content rdf:about="#Content0">
+<Content rdf:about="#Content3">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <hasImage rdf:resource="#Image0"/>
-  <hasDancer rdf:resource="#Dancer0"/>
-  <hasStatic rdf:resource="#Static0"/>
+  <hasImage rdf:resource="#Image3"/>
+  <hasDancer rdf:resource="#Dancer11"/>
+  <hasStatic rdf:resource="#Static3"/>
 </Content>
+
+<Image rdf:about="#Image4">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/rounak/Documents/onto/environment/Ontology-editing-and-Query-processing/data/Hand1-20220127T142046Z-001/Hand1/H6.JPG</hasFilePath>
+  <hasFileName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">H6</hasFileName>
+  <hasFileExtension rdf:datatype="http://www.w3.org/2001/XMLSchema#string">JPG</hasFileExtension>
+  <hasFileSize rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5919379</hasFileSize>
+</Image>
+
+<Static rdf:about="#Static4">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasSamyuktaMudra rdf:resource="#utsang_mudra"/>
+  <hasDanceName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Some dance name IV</hasDanceName>
+</Static>
+
+<Content rdf:about="#Content4">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasImage rdf:resource="#Image4"/>
+  <hasDancer rdf:resource="#Dancer11"/>
+  <hasStatic rdf:resource="#Static4"/>
+</Content>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="#HeadPosition"/>
+    <rdf:Description rdf:about="#LegPosition"/>
+    <rdf:Description rdf:about="#TorsoPosition"/>
+  </owl:members>
+</owl:AllDisjointClasses>
 
 <swrl:Imp>
   <swrl:body>
@@ -752,14 +853,6 @@
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S1</rdfs:label>
 </swrl:Imp>
-
-<owl:AllDisjointClasses>
-  <owl:members rdf:parseType="Collection">
-    <rdf:Description rdf:about="#HeadPosition"/>
-    <rdf:Description rdf:about="#LegPosition"/>
-    <rdf:Description rdf:about="#TorsoPosition"/>
-  </owl:members>
-</owl:AllDisjointClasses>
 
 
 </rdf:RDF>
