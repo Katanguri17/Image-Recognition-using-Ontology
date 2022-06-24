@@ -49,19 +49,21 @@ def askDancerName(clicked,window):
     
     add_name_entry=Entry(newWindow,width=80)
     add_name_entry.grid(row=1,column=0)
-    
-    OEM.onto.search_one(hasDancerId=clicked.get()[0]).OEM.update_dancer_info(add_name_entry.get())
+    print(clicked.get().split(',')[0])
+    OEM.onto.search_one(hasDancerId=int(clicked.get().split(',')[0])).update_dancer_info(_add_name=add_name_entry.get())
     
 def editDancer():
-    dancer_options = [[dancer.hasDancerId,dancer.hasDancerName,dancer.hasDancerAge,dancer.hasDancerGender] for dancer in OEM.onto.Dancer.instances()]
+    dancer_options = [str(dancer.hasDancerId)+','+str(dancer.hasDancerName)+','+str(dancer.hasDancerAge)+','+dancer.hasDancerGender for dancer in OEM.onto.Dancer.instances()]
     newWindow=Toplevel(root)
     newWindow.title("Edit Dancer")
     
     clicked=StringVar(newWindow)
-    clicked.set("Select a dancer to edit it's name")
+    clicked.set(dancer_options[0])
     
     dancer_dropdown = OptionMenu(newWindow,clicked,*dancer_options)
     dancer_dropdown.grid(column = 0,row = 0)#, padx="5", pady="5"
+
+    print(clicked)
     
     submit_button = Button(newWindow,text='Submit',command=askDancerName(clicked,newWindow))
     submit_button.grid(row=1,column=0)
@@ -113,5 +115,4 @@ if __name__=='__main__':
     
     root.mainloop()
     
-
 
