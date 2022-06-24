@@ -3,6 +3,7 @@ from tkinter import *
 from tkinter import filedialog
 from turtle import left
 from PIL import ImageTk, Image
+from owlready2 import *
 from functools import partial
 import os
 
@@ -37,8 +38,34 @@ def createNewDancer():
     submit_button = Button(newWindow, text='Submit', command=OEM.add_new_dancer_instance(Dancer_name_entry.get(),Dancer_age_entry.get(),gender_val.get()))
     submit_button.grid(row=5,column=0)#,padx=10,pady=10)
     
-    
 
+def askDancerName(clicked,window):
+    
+    newWindow=Toplevel(window)
+    newWindow.title("Enter name of Dancer")
+    
+    add_name_label=Label(newWindow,text='Enter the name of the dancer')
+    add_name_label.grid(row=0,column=0)
+    
+    add_name_entry=Entry(newWindow,width=80)
+    add_name_entry.grid(row=1,column=0)
+    
+    OEM.onto.search_one(hasDancerId=clicked.get()[0]).OEM.update_dancer_info(add_name_entry.get())
+    
+def editDancer():
+    dancer_options = [[dancer.hasDancerId,dancer.hasDancerName,dancer.hasDancerAge,dancer.hasDancerGender] for dancer in OEM.onto.Dancer.instances()]
+    newWindow=Toplevel(root)
+    newWindow.title("Edit Dancer")
+    
+    clicked=StringVar(newWindow)
+    clicked.set("Select a dancer to edit it's name")
+    
+    dancer_dropdown = OptionMenu(newWindow,clicked,*dancer_options)
+    dancer_dropdown.grid(column = 0,row = 0)#, padx="5", pady="5"
+    
+    submit_button = Button(newWindow,text='Submit',command=askDancerName(clicked,newWindow))
+    submit_button.grid(row=1,column=0)
+    
 def fileClick():
     global image_path
     image_path = filedialog.askopenfilename(initialdir = data_dir, title = "Select a File", filetypes = (("jpg files","*.jpg*"),("JGP files","*.JPG*"),("png files","*.png*"),("PNG files","*.PNG*"),("All files","*.*")))
@@ -65,9 +92,7 @@ task left
 if __name__=='__main__':
     root = Tk()
     root.title("Dance Image Annotator")
-    
-    dancer_options = [[dancer.hasDancerId,dancer.hasDancerName,dancer.hasDancerAge,dancer.hasDancerGender] for dancer in OEM.onto.Dancer.instances()]
-    clicked=dancer_options[0]
+
     
     img_path_label=Label(root,text='Image Path')
     img_path_label.grid(row=0, column=0,padx=10,pady=10)
@@ -80,11 +105,8 @@ if __name__=='__main__':
     file_explore = Button(root, text = "Browse...",command = partial(fileClick))
     file_explore.grid(column = 2, row = 0, padx="5", pady="5")
     
-    dancer_info_label=Label(root,text='Dancer details')
+    dancer_info_label=Button(root,text='Edit name of a dancer',command=editDancer)
     dancer_info_label.grid(row=2, column=0,padx=10,pady=10,columnspan=3)
-    
-    dancer_dropdown = OptionMenu(root,clicked,*dancer_options)
-    dancer_dropdown.grid(column = 0,row = 3, padx="5", pady="5")
     
     dancer_instance = Button(root,text="Create a new dancer",command=createNewDancer)
     dancer_instance.grid(column = 1,row =3, padx="5",pady = "5") 
