@@ -782,6 +782,22 @@
   <hasStatic rdf:resource="#Static4"/>
 </Content>
 
+<Dancer rdf:about="#Dancer12">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasDancerId rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">12</hasDancerId>
+  <hasDancerName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></hasDancerName>
+  <hasDancerAge rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></hasDancerAge>
+  <hasDancerGender rdf:datatype="http://www.w3.org/2001/XMLSchema#string">O</hasDancerGender>
+</Dancer>
+
+<Dancer rdf:about="#Dancer13">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasDancerId rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">13</hasDancerId>
+  <hasDancerName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></hasDancerName>
+  <hasDancerAge rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></hasDancerAge>
+  <hasDancerGender rdf:datatype="http://www.w3.org/2001/XMLSchema#string">O</hasDancerGender>
+</Dancer>
+
 <owl:AllDisjointClasses>
   <owl:members rdf:parseType="Collection">
     <rdf:Description rdf:about="#HeadPosition"/>
