@@ -1,3 +1,4 @@
+from re import L
 from tkinter import *
 from tkinter import filedialog
 from PIL import ImageTk, Image
@@ -6,13 +7,49 @@ from functools import partial
 import os
 
 import OntoEditModule as OEM
+import OntoQueryModule as OQM
 
 cwd = os.path.dirname(os.path.realpath('__file__'))
 par_dir=os.path.dirname(cwd)
 data_dir=par_dir+'/data'
 
-
+'''
+function for query system
+library
+'''
+def query():
+    newWindow = Toplevel(root)
+    newWindow.title('Query System')
     
+    #new Window has sub divisions for each query system
+    Dancer_name_entry = Entry(newWindow,text='Dancer Name',width=80,height=20)
+    Dancer_name_entry.grid(row=0,column=0)
+    
+    Dancer_id_entry = Entry(newWindow,text='Dancer ID',width=80,height=20)
+    Dancer_id_entry.grid(row=1,column=0)
+    
+    Dancer_age_entry = Entry(newWindow,text='Dancer Age',width=80,height=20)
+    Dancer_age_entry.grid(row=2,column=0)
+    
+    Dancer_gender_entry = Entry(newWindow,text='Dancer gender',width=80,height=20)
+    Dancer_gender_entry.grid(row=3,column=0)
+    
+    Dance_name_entry = Entry(newWindow,text='Dance Name',width=80,height=20)
+    Dancer_name_entry.grid(row=4,column=0)
+    
+    Sam_mudra_entry = Entry(newWindow,text='Sam Mudra',width=80,height=20)
+    Sam_mudra_entry.grid(row=5,column=0)
+    
+    L_mudra_entry= Entry(newWindow,text='Left Mudra',width=80,height=20)
+    L_mudra_entry.grid(row=6,column=0)
+    
+    R_mudra_entry = Entry(newWindow,text='Right Mudra',width=80,height=20)
+    R_mudra_entry.grid(row=7,column=0)
+    
+    Dict={'dancer name':Dancer_name_entry.get(),'dancer age':Dancer_age_entry.get(),'dancer gender':Dancer_gender_entry.get(),'dance name':Dance_name_entry.get(),'sam_mudra':Sam_mudra_entry.get(),'l_mudra':L_mudra_entry.get(),'r_mudra':R_mudra_entry.get()}
+    
+    submit_button= Button(newWindow,text='Submit',command=partial(OQM.generate_query(Dict)))
+  
 def fileClick():
     global image_path
     image_path = filedialog.askopenfilename(initialdir = data_dir, title = "Select a File", filetypes = (("jpg files","*.jpg*"),("JGP files","*.JPG*"),("png files","*.png*"),("PNG files","*.PNG*"),("All files","*.*")))
@@ -88,7 +125,9 @@ def submit(clicked,gender_val,sam_val,lefthand_val,righthand_val):
 if __name__=='__main__':
     root = Tk()
     root.title("Dance Image Annotator")
-
+    
+    #starting of annotator 
+    
     path_selector=Frame(root)
     path_selector.grid(row=0,column=0,columnspan=2)
     img_path_label=Label(path_selector,text='Image Path')
@@ -215,6 +254,9 @@ if __name__=='__main__':
 
     submit_button = Button(root, text='Submit', command=partial(submit,clicked,gender_val,sam_val,lefthand_val,righthand_val))
     
+    query_frame=Frame(root)
+    query_the_onto = Button(root, text='Query the database', command=partial(query),width=80)
+    query_the_onto.grid(row=4,column=0)
     root.mainloop()
     
 

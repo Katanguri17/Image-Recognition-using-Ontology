@@ -1,11 +1,10 @@
 from owlready2 import *
 import os
 
-onto_filepath='/home/rounak/Documents/onto/environment/Ontology-editing-and-Query-processing/ontology_editing/dance_dummy.owl'
+onto_filepath='/home/swarup3204/Ontology-editing-and-Query-processing/ontology_editing/dance_dummy.owl'
 onto = get_ontology('file://'+onto_filepath).load()
 
 def generate_requirements(free_form_text):
-	# remaining
 	pass
 
 def generate_query(requirements):
