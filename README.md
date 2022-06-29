@@ -8,5 +8,4 @@ search and retrieval.
 # Frameworks/Tools 
 
 We have designed ontology using Protégé,Protégé is a free, open source ontology editor and knowledge-base framewor
-We have used Owlready2 library of python for adding instances to the ontology in Owl Format.
-
+We have used Owlready2 library of python for adding instances to the ontology in Owl Format.We used sparql format for making queries and retrieving the results received.
