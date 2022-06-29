@@ -67,8 +67,8 @@ if __name__ == '__main__':
     
     Dict={'dancer_name':Dancer_name_entry.get(),'dancer_age':Dancer_age_entry.get(),'dancer_gender':Dancer_gender_entry.get(),'dance_name':Dance_name_entry.get(),'sam_mudra':Sam_mudra_entry.get(),'l_mudra':L_mudra_entry.get(),'r_mudra':R_mudra_entry.get()}
     
-    # submit_button= Button(root,text='Submit',command=partial(OQM.generate_query(Dict)))
-    # submit_button= Button.grid(row=8,column=0)
+    submit_button= Button(root,text='Submit',command=partial(OQM.generate_query(Dict)))
+    submit_button= Button.grid(row=17,column=0)
     
     
     root.mainloop()
