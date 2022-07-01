@@ -1,7 +1,8 @@
 from owlready2 import *
 import os
 
-onto_filepath='/home/swarup3204/Ontology-editing-and-Query-processing/ontology_editing/dance_dummy.owl'
+cwd = os.path.dirname(os.path.realpath('__file__'))
+onto_filepath=cwd+r'/dance_dummy.owl'
 onto = get_ontology('file://'+onto_filepath).load()
 
 def generate_requirements(free_form_text):
@@ -10,7 +11,7 @@ def generate_requirements(free_form_text):
 def generate_query(requirements):
     query="""
     PREFIX dio: <http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#>
-    SELECT ?image_path
+    SELECT DISTINCT ?image_path
     WHERE{
         ?content a dio:Content ;
             dio:hasDancer ?dancer ;

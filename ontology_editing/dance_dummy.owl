@@ -313,6 +313,7 @@
   <hasDancerGender rdf:datatype="http://www.w3.org/2001/XMLSchema#string">F</hasDancerGender>
   <hasDancerId rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasDancerId>
   <hasDancerName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">d0</hasDancerName>
+  <hasDancerName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Laxman</hasDancerName>
 </Dancer>
 
 <Image rdf:about="#Image0">
@@ -1211,6 +1212,36 @@
   <hasStatic rdf:resource="#Static22"/>
 </Content>
 
+<Image rdf:about="#Image23">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/home/rounak/Documents/onto/environment/Ontology-editing-and-Query-processing/data/Hand1-20220127T142046Z-001/Hand1/H30.JPG</hasFilePath>
+  <hasFileName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">H30</hasFileName>
+  <hasFileExtension rdf:datatype="http://www.w3.org/2001/XMLSchema#string">JPG</hasFileExtension>
+  <hasFileSize rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5903669</hasFileSize>
+</Image>
+
+<Static rdf:about="#Static23">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasLeftHandMudra rdf:resource="#alapadma_mudra"/>
+  <hasRightHandMudra rdf:resource="#katakamukha_mudra"/>
+  <hasDanceName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Dance name III</hasDanceName>
+</Static>
+
+<Content rdf:about="#Content23">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasImage rdf:resource="#Image23"/>
+  <hasDancer rdf:resource="#Dancer0"/>
+  <hasStatic rdf:resource="#Static23"/>
+</Content>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="#HeadPosition"/>
+    <rdf:Description rdf:about="#LegPosition"/>
+    <rdf:Description rdf:about="#TorsoPosition"/>
+  </owl:members>
+</owl:AllDisjointClasses>
+
 <swrl:Imp>
   <swrl:body>
     <swrl:AtomList>
@@ -1274,14 +1305,6 @@
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
   <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S1</rdfs:label>
 </swrl:Imp>
-
-<owl:AllDisjointClasses>
-  <owl:members rdf:parseType="Collection">
-    <rdf:Description rdf:about="#HeadPosition"/>
-    <rdf:Description rdf:about="#LegPosition"/>
-    <rdf:Description rdf:about="#TorsoPosition"/>
-  </owl:members>
-</owl:AllDisjointClasses>
 
 
 </rdf:RDF>

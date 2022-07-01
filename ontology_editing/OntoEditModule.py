@@ -3,7 +3,8 @@ import pandas as pd
 import os
 import PIL.Image
 
-onto_filepath='/home/swarup3204/Ontology-editing-and-Query-processing/ontology_editing/dance_dummy.owl'
+cwd = os.path.dirname(os.path.realpath('__file__'))
+onto_filepath=cwd+r'/dance_dummy.owl'
 onto = get_ontology('file://'+onto_filepath).load()
 
 with onto:
