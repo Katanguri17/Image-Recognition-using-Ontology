@@ -4,6 +4,7 @@ from tkinter import filedialog
 from PIL import ImageTk, Image
 from owlready2 import *
 from functools import partial
+from tkinter import ttk
 import os
 
 import OntoEditModule as OEM
@@ -80,25 +81,45 @@ def submit_function(gender_val, sam_val, lefthand_val, righthand_val):
     L = list(default_world.sparql(Query))
 
     newWindow = Toplevel(root)
-    newWindow.title("Results")
+    newWindow.geometry("540x800")
+    newWindow.title("Result")
+    
+    main_frame = Frame(newWindow)
+    main_frame.pack(fill=BOTH, expand=1)
+
+    # Create A Canvas
+    my_canvas = Canvas(main_frame)
+    my_canvas.pack(side=LEFT, fill=BOTH, expand=1)
+
+    # Add A Scrollbar To The Canvas
+    my_scrollbar = ttk.Scrollbar(main_frame, orient=VERTICAL, command=my_canvas.yview)
+    my_scrollbar.pack(side=RIGHT, fill=Y)
+
+    # Configure The Canvas
+    my_canvas.configure(yscrollcommand=my_scrollbar.set)
+    my_canvas.bind('<Configure>', lambda e: my_canvas.configure(scrollregion = my_canvas.bbox("all")))
+
+    # Create ANOTHER Frame INSIDE the Canvas
+    second_frame = Frame(my_canvas)
+    my_canvas.create_window((0,0), window=second_frame, anchor="nw")
 
     i = 1
 
     for path in L:
-        print(path[0])
-        display_img_label = Label(newWindow)
+        #print(path[0])
+        display_img_label = Label(second_frame)
         
         display_img = Image.open(path[0])
         w, h = display_img.size
-        display_img = ImageTk.PhotoImage(display_img.resize((400, int(h*400/w))))
+        display_img = ImageTk.PhotoImage(display_img.resize((500, int(h*500/w))))
         display_img_label.configure(image=display_img)
         display_img_label.photo = display_img
         if(i % 2):
-            Label_path = Label(newWindow, text=path[0], fg='red',width=40,height=5,wraplength=400)
+            Label_path = Label(second_frame, text=path[0], fg='red',width=40,height=5,wraplength=450)
         else:
-            Label_path = Label(newWindow, text=path[0], fg='blue',width=40,height=5,wraplength=400)
+            Label_path = Label(second_frame, text=path[0], fg='blue',width=40,height=5,wraplength=450)
         Label_path.pack()
-        display_img_label.pack()
+        display_img_label.pack(padx=10)
         i += 1
 
 
