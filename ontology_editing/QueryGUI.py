@@ -1,11 +1,10 @@
-from re import L
 from tkinter import *
-from tkinter import filedialog
 from PIL import ImageTk, Image
 from owlready2 import *
 from functools import partial
 from tkinter import ttk
-import os
+
+from pyparsing import col
 
 import OntoEditModule as OEM
 import OntoQueryModule as OQM
@@ -24,61 +23,89 @@ def show_sam_menu():
     select_asam_frame.grid_remove()
     select_sam_frame.grid(row=5, column=0, columnspan=2)
 
+def show_open_query():
+    global isOpen
+    isOpen=True
+    tight_query.grid_remove()
+    open_query.grid(row=1,column=0)
+
+def show_tight_query():
+    global isOpen
+    isOpen=False
+    open_query.grid_remove()
+    tight_query.grid(row=3,column=0)
 
 def submit_function(gender_val, sam_val, lefthand_val, righthand_val):
 
-    query={}
-    print(Dancer_name_entry.get())
-    if Dancer_name_entry.get()!='':
-        query['dancer_name']=Dancer_name_entry.get()
+    if isOpen:
+        print('Performing an open query ...')
+        asam_query,sam_query=OQM.generate_open_query(free_form_entry.get())
+        L=[]
+        if asam_query is not None:	
+            print('Asamyukta mudra specific SPARQL query:',end='')
+            print(asam_query,end='')
+            l1=list(default_world.sparql(asam_query))
+            print('Results:',[ s[0][-7:] for s in l1] )
+            L=L+l1
+        if sam_query is not None:
+            print('Samyukta mudra specific SPARQL query:',end='')
+            print(sam_query,end='')
+            l2=list(default_world.sparql(sam_query))
+            print('Results:',[ s[0][-7:] for s in l2])
+            L=L+l2
     else:
-        query['dancer_name']=None
+        print('Performing a tight query ...')
+        query={}
+        if Dancer_name_entry.get()!='':
+            query['dancer_name']=Dancer_name_entry.get()
+        else:
+            query['dancer_name']=None
 
-    if Dancer_id_entry.get()!='':
-        query['dancer_id']=Dancer_id_entry.get()
-    else:
-        query['dancer_id']=None
+        if Dancer_id_entry.get()!='':
+            query['dancer_id']=Dancer_id_entry.get()
+        else:
+            query['dancer_id']=None
 
-    if Dancer_age_entry.get()!='':
-        query['dancer_age']=Dancer_age_entry.get()
-    else:
-        query['dancer_age']=None
+        if Dancer_age_entry.get()!='':
+            query['dancer_age']=Dancer_age_entry.get()
+        else:
+            query['dancer_age']=None
 
-    if gender_val.get()!='--Select--':
-        query['dancer_gender']=gender_val.get()[:1]
-    else:
-        query['dancer_gender']=None
+        if gender_val.get()!='--Select--':
+            query['dancer_gender']=gender_val.get()[:1]
+        else:
+            query['dancer_gender']=None
 
-    if Dance_name_entry.get()!='':
-        query['dance_name']=Dance_name_entry.get()
-    else:
-        query['dance_name']=None
+        if Dance_name_entry.get()!='':
+            query['dance_name']=Dance_name_entry.get()
+        else:
+            query['dance_name']=None
 
-    if isSamyukta:
-        if sam_val.get()!='--Select--':
-            query['sam_mudra']=int(sam_val.get().split('\t')[0].split(':')[1])
+        if isSamyukta:
+            if sam_val.get()!='--Select--':
+                query['sam_mudra']=int(sam_val.get().split('\t')[0].split(':')[1])
+            else:
+                query['sam_mudra']=None
+            query['l_mudra']=None
+            query['r_mudra']=None
+
         else:
             query['sam_mudra']=None
-        query['l_mudra']=None
-        query['r_mudra']=None
+            if lefthand_val.get()!='--Select--':
+                query['l_mudra']=int(lefthand_val.get().split('\t')[0].split(':')[1])
+            else:
+                query['l_mudra']=None
+            if righthand_val.get()!='--Select--':
+                query['r_mudra']=int(righthand_val.get().split('\t')[0].split(':')[1])
+            else:
+                query['r_mudra']=None
+            
+        print('Requirements dict.:',query)
 
-    else:
-        query['sam_mudra']=None
-        if lefthand_val.get()!='--Select--':
-            query['l_mudra']=int(lefthand_val.get().split('\t')[0].split(':')[1])
-        else:
-            query['l_mudra']=None
-        if righthand_val.get()!='--Select--':
-            query['r_mudra']=int(righthand_val.get().split('\t')[0].split(':')[1])
-        else:
-            query['r_mudra']=None
-        
-    print(query)
-
-    #print(query)
-    Query = OQM.generate_query(query)
-    #print(Query)
-    L = list(default_world.sparql(Query))
+        Query = OQM.generate_tight_query(query)
+        print('SPARQL query:',Query,end='')
+        L = list(default_world.sparql(Query))
+        print('Results:',[s[0][-7:] for s in L])
 
     newWindow = Toplevel(root)
     newWindow.geometry("540x800")
@@ -125,44 +152,61 @@ def submit_function(gender_val, sam_val, lefthand_val, righthand_val):
 
 
 if __name__ == '__main__':
-    root = Tk()
+    root=Tk()
+
     root.title('Query Window')
-    root.minsize(400, 400)
-    # root.geometry("250*250")
-    #query_frame = Frame(root)
-    # query_the_onto = Button(root, text='Query the database',
+    # root.minsize(400, 400)
+
+    isOpen=True
+    open_query_button=Button(root, text='Make free form query', command=show_open_query, width=70)
+    tight_query_button=Button(root, text='Make a tight query',command=show_tight_query,width=70)
+
+    open_query_button.grid(row=0,column=0,padx=5,pady=5,ipady=10)
+    tight_query_button.grid(row=2,column=0,padx=5,pady=5,ipady=10)
+
+    open_query = Frame(root)
+    tight_query = Frame(root)
+
+    type_query_label=Label(open_query, text='Type you\nquery')
+    type_query_label.grid(row=0,column=0)
+    free_form_entry=Entry(open_query,width=60)
+    free_form_entry.grid(row=0,column=1,padx=5,pady=5,ipady=5)
+    
+    # tight_query.geometry("250*250")
+    #query_frame = Frame(tight_query)
+    # query_the_onto = Button(tight_query, text='Query the database',
     #                         command=partial(query), width=80)
     # query_the_onto.grid(row=4, column=0)
-    Dancer_name_label = Label(root, text='Dancer Name')
+    Dancer_name_label = Label(tight_query, text='Dancer Name')
     Dancer_name_label.grid(row=0, column=0)
 
-    Dancer_name_entry = Entry(root, width=60)
+    Dancer_name_entry = Entry(tight_query, width=60)
     Dancer_name_entry.grid(row=0, column=1,padx=5,pady=5,ipady=5)
 
-    Dancer_id_label = Label(root, text='Dancer ID')
+    Dancer_id_label = Label(tight_query, text='Dancer ID')
     Dancer_id_label.grid(row=2, column=0)
 
-    Dancer_id_entry = Entry(root, width=60)
+    Dancer_id_entry = Entry(tight_query, width=60)
     Dancer_id_entry.grid(row=2, column=1,padx=5,pady=5,ipady=5)
 
-    Dancer_age_label = Label(root, text='Dancer Age')
+    Dancer_age_label = Label(tight_query, text='Dancer Age')
     Dancer_age_label.grid(row=3, column=0)
 
-    Dancer_age_entry = Entry(root, width=60)
+    Dancer_age_entry = Entry(tight_query, width=60)
     Dancer_age_entry.grid(row=3, column=1,padx=5,pady=5,ipady=5)
 
-    Dancer_gender_label = Label(root, text='Gender')
+    Dancer_gender_label = Label(tight_query, text='Gender')
     Dancer_gender_label.grid(row=4, column=0)
 
     gender = ['--Select--','Male', 'Female']
-    gender_val = StringVar(root)
+    gender_val = StringVar(tight_query)
     gender_val.set(gender[0])
 
-    Dancer_gender = OptionMenu(root, gender_val, *gender)
+    Dancer_gender = OptionMenu(tight_query, gender_val, *gender)
     Dancer_gender.configure(width=10, height=2)
     Dancer_gender.grid(row=4, column=1, padx=5, pady=5)
 
-    hastamudra_frame = Frame(root)
+    hastamudra_frame = Frame(tight_query)
     hastamudra_frame.grid(row=5, column=0, columnspan=2, padx=10, pady=10)
     # hastamudra_label = Label(hastamudra_frame, text='Dance details')
     # hastamudra_label.grid(row=0, column=0, padx=10, pady=10, columnspan=2)
@@ -226,6 +270,6 @@ if __name__ == '__main__':
     #print(Dancer_gender_entry.get())
     
     submit_button = Button(root, text='Submit',command=partial(submit_function,gender_val, sam_val, lefthand_val, righthand_val))
-    submit_button.grid(row=6, column=0,columnspan=2,padx=5,pady=5,ipady=10)
+    submit_button.grid(row=4, column=0,padx=5,pady=5,ipady=10)
 
-    root.mainloop()
+    tight_query.mainloop()
