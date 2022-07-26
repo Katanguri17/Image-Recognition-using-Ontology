@@ -88,6 +88,7 @@ for i in range(100):
     entities = []
     choseGender = random.randint(0, 3)
     isAsam = random.randint(0, 1)
+    choose_mudra_word = random.randint(0, 1)
     mentionRasa = random.randint(0, 4)
 
 # 0.25 prob of mentioning rasa
@@ -112,25 +113,18 @@ for i in range(100):
 
     if isAsam:
 
-        choice = random.randint(1, 3)
-        mentionLeft = 0
-        mentionRight = 0
-
-        if choice == 1:
-            mentionLeft = 1
-
-        elif choice == 2:
-            mentionRight = 1
-
-        else:
-            mentionLeft = mentionRight = 1
+        mentionLeft = random.randint(0, 4)
+        mentionRight = random.randint(0, 4)
 
         if mentionLeft:
             start_l_mud = len(text)
             text += hastamudra['asamyukta'][random.randint(
                 0, len(hastamudra['asamyukta'])-1)]
             end_l_mud = len(text)
-            text += " on left hand "
+            text+=" "
+            if choose_mudra_word:
+                 text += 'mudra '
+            text += "on left hand "
             entities.append((start_l_mud, end_l_mud, 'MUDRA'))
             if mentionRight:
                 text += "and "
@@ -139,8 +133,11 @@ for i in range(100):
             start_r_mud = len(text)
             text += hastamudra['asamyukta'][random.randint(
                 0, len(hastamudra['asamyukta'])-1)]
+            text+=" "
+            if choose_mudra_word:
+                 text += 'mudra '
             end_r_mud = len(text)
-            text += " on right hand "
+            text += "on right hand "
             entities.append((start_r_mud, end_r_mud, 'MUDRA'))
 
     else:
@@ -154,6 +151,9 @@ for i in range(100):
             end_s_mud = len(text)
             text += " "
             entities.append((start_s_mud, end_s_mud, 'MUDRA'))
+
+            if choose_mudra_word:
+                text += 'mudra '
 
     if mentionRasa:
         text += "with "
@@ -178,6 +178,7 @@ for i in range(100):
     isAsam = random.randint(0, 1)
     mentionRasa = random.randint(0, 4)
     choose_word_dancer = random.randint(0, 1)
+    choose_mudra_word = random.randint(0, 1)
 
     if isAsam:
 
@@ -199,7 +200,10 @@ for i in range(100):
             text += hastamudra['asamyukta'][random.randint(
                 0, len(hastamudra['asamyukta'])-1)]
             end_l_mud = len(text)
-            text += " on left hand "
+            text+=" "
+            if choose_mudra_word:
+                text += 'mudra '
+            text += "on left hand "
             entities.append((start_l_mud, end_l_mud, 'MUDRA'))
             if mentionRight:
                 text += "and "
@@ -209,7 +213,10 @@ for i in range(100):
             text += hastamudra['asamyukta'][random.randint(
                 0, len(hastamudra['asamyukta'])-1)]
             end_r_mud = len(text)
-            text += " on right hand "
+            text +=" "
+            if choose_mudra_word:
+                text += 'mudra '
+            text += "on right hand "
             entities.append((start_r_mud, end_r_mud, 'MUDRA'))
 
     else:
@@ -223,6 +230,9 @@ for i in range(100):
             end_s_mud = len(text)
             text += " "
             entities.append((start_s_mud, end_s_mud, 'MUDRA'))
+
+            if choose_mudra_word:
+                text += 'mudra '
 
     if choose_passive_word:
         text += 'which is'
@@ -256,8 +266,8 @@ for i in range(100):
         if random.randint(0, 3):
             text += " rasa"
 
-    text=text.capitalize()
-    
+    text = text.capitalize()
+
     f.write('("'+text+'", {"entities": ')
     f.write(str(entities)+'}),\n')
 
