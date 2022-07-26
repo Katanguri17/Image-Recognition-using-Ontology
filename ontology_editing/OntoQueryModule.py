@@ -39,7 +39,7 @@ def generate_requirements(free_form_text):
 			elif ent.text in ['female','girl','woman','lady','she','miss']:
 				DancerGender='F'
 		if ent.label_=='MUDRA':
-			match_a,match_s=MudraMatch.match(ent.text)
+			match_a,match_s=MudraMatch.match(ent.text.lower())
 			# print(match_a,match_s)
 			AsamMudList.extend(match_a)
 			SamMudList.extend(match_s)
@@ -85,7 +85,7 @@ def generate_tight_query(requirements):
     if requirements['dancer_age'] is not None:
         query=query+"\tFILTER (?dancer_age = "+str(requirements['dancer_age'])+")\n"
     if requirements['dancer_gender'] is not None:
-        query+query+"\tFILTER regex(?dancer_gender,'"+requirements['dancer_gender']+"','i')\n"
+        query=query+"\tFILTER regex(?dancer_gender,'"+requirements['dancer_gender']+"','i')\n"
     
     if requirements['dance_name'] is not None:
         query=query+"\tFILTER regex(?dance_name,'"+requirements['dance_name']+"','i')\n"
