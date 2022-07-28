@@ -1,11 +1,9 @@
-from calendar import c
 import random
-
-from torch import rand
+import pickle
 
 ask_keywords = [
-    '', 'Get me', 'Get me an image', 'Get', 'Get an image', 'Show', 'Show me an image', 'Show me', 'Show me a picture', "Show a pic",
-    "Fetch", "Fetch me a picture", "Fetch me an image", "Retrieve an image", "Retrieve", "Retrieve an instance"
+    '', 'get me', 'get me an image', 'get', 'get an image', 'show', 'show me an image', 'show me', 'show me a picture', "show a pic",
+    "fetch", "fetch me a picture", "fetch me an image", "retrieve an image", "retrieve", "retrieve an instance"
 ]
 
 filler_prep_active = ['of', 'in which', 'where', 'which']
@@ -79,11 +77,10 @@ hastamudra = {
 fac = ['shringer', 'hasya', 'bibhatsya', 'rudra',
        'shanta', 'veera', 'bhaya', 'karuna', 'advuta']
 
-f = open('dataset.txt', 'w')
 
 # active voice query generation
 
-for i in range(100):
+def active_query():
     text = ""
     entities = []
     choseGender = random.randint(0, 3)
@@ -133,10 +130,10 @@ for i in range(100):
             start_r_mud = len(text)
             text += hastamudra['asamyukta'][random.randint(
                 0, len(hastamudra['asamyukta'])-1)]
+            end_r_mud = len(text)
             text+=" "
             if choose_mudra_word:
                  text += 'mudra '
-            end_r_mud = len(text)
             text += "on right hand "
             entities.append((start_r_mud, end_r_mud, 'MUDRA'))
 
@@ -164,13 +161,12 @@ for i in range(100):
         if random.randint(0, 3):
             text += " rasa"
 
-    f.write('("'+text+'", {"entities": ')
-    f.write(str(entities)+'}),\n')
+    return text,entities
 
 
 # passive voice query generation
 
-for i in range(100):
+def passive_query():
     text = ""
     entities = []
     choose_passive_word = random.randint(0, 1)
@@ -266,10 +262,31 @@ for i in range(100):
         if random.randint(0, 3):
             text += " rasa"
 
-    text = text.capitalize()
 
-    f.write('("'+text+'", {"entities": ')
-    f.write(str(entities)+'}),\n')
+    return text,entities
+
+def save_dataset(n):
+    l=[]
+    f = open('dataset.txt', 'w')
+
+    for i in range(n):
+        isActive=random.randint(0,1)
+        if isActive:
+            text,entities=active_query()
+        else:
+            text,entities=passive_query()
+        f.write('("'+text+'", {"entities": ')
+        f.write(str(entities)+'}),\n')
+        l.append((text,{'entities':entities}))
+
+    f.close()
+    
+    ds_file=open('dataset_bin','wb')
+    pickle.dump(l,ds_file)
+    ds_file.close()
 
 
-f.close()
+if __name__=='__main__':
+    save_dataset()
+    
+
