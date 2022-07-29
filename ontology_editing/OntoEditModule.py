@@ -72,6 +72,9 @@ def add_new_static_instance(_dance_name, _is_samyukta=False, _samyukta=None, _le
     else:
         static_desc.hasLeftHandMudra=onto.search_one(hasMudraId=_left)
         static_desc.hasRightHandMudra=onto.search_one(hasMudraId=_right)
+    static_desc.hasHeadPosition=onto.HeadPosition.instances()[0]
+    static_desc.hasLegPosition=onto.LegPosition.instances()[0]
+    static_desc.hasTorsoPosition=onto.TorsoPosition.instances()[0]
     onto.save(file = onto_filepath, format = "rdfxml")
     return static_desc
 

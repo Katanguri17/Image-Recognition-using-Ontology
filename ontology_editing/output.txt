@@ -1,0 +1,44 @@
++++ TIGHT QUERY +++
+Requirements dict.: {'dancer_name': 'rahul', 'dancer_id': None, 'dancer_age': None, 'dancer_gender': 'M', 'dance_name': None, 'sam_mudra': None, 'l_mudra': 4, 'r_mudra': None}
+SPARQL query:
+
+PREFIX dio: <http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#>
+SELECT DISTINCT ?image_path
+WHERE{
+    ?content a dio:Content ;
+    	dio:hasDancer ?dancer ;
+    	dio:hasStatic ?static ;
+    	dio:hasImage ?image .
+    ?dancer dio:hasDancerName ?dancer_name ;
+        dio:hasDancerAge ?dancer_age ;
+        dio:hasDancerId ?dancer_id ;
+        dio:hasDancerGender ?dancer_gender .
+    ?static dio:hasDanceName ?dance_name .
+	FILTER regex(?dancer_name,'rahul','i')
+	?static dio:hasLeftHandMudra/dio:hasMudraId ?l_mudra . 
+	FILTER (?l_mudra = 4)
+?image dio:hasFilePath ?image_path
+}
+['100.jpg', 'H97.jpg', 'H98.jpg']
++++ OPEN QUERY +++
+Query text: Show me a picture of male performing ardhapataka on left hand and alapada on right hand with vira rasa
+Asamyukta mudra specific SPARQL query:
+
+PREFIX dio: <http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology#>
+SELECT DISTINCT ?image_path
+WHERE{
+    ?content a dio:Content ;
+    	dio:hasDancer ?dancer ;
+    	dio:hasStatic ?static ;
+    	dio:hasImage ?image .
+    ?dancer dio:hasDancerName ?dancer_name ;
+        dio:hasDancerAge ?dancer_age ;
+        dio:hasDancerId ?dancer_id ;
+        dio:hasDancerGender ?dancer_gender .
+    ?static dio:hasDanceName ?dance_name .
+	?static dio:hasLeftHandMudra/dio:hasMudraId ?l_mudra . 
+	?static dio:hasRightHandMudra/dio:hasMudraId ?r_mudra . 
+	FILTER ( ?l_mudra=4 || ?r_mudra=4 || ?l_mudra=0 || ?r_mudra=0 )
+	?image dio:hasFilePath ?image_path
+}
+['100.jpg', 'H91.JPG', 'H92.JPG', 'H95.jpg', 'H96.jpg', 'H97.jpg', 'H98.jpg', 'H99.jpg', 'H30.JPG', 'H49.JPG', 'H53.JPG', 'H57.JPG']

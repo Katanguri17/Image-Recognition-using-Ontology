@@ -7,7 +7,6 @@ from functools import partial
 import os
 
 import OntoEditModule as OEM
-import OntoQueryModule as OQM
 
 cwd = os.path.dirname(os.path.realpath('__file__'))
 par_dir = os.path.dirname(cwd)
