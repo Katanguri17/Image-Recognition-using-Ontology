@@ -1,3 +1,18 @@
+# Ontology Editing and Query Processing
+
+We have designed an Ontology based Video Retrieval System.An ontology-based knowledge representation
+could be used for content analysis and concept recognition, for reasoning
+processes and for enabling user-friendly and intelligent multimedia content
+search and retrieval.
+
+# Frameworks/Tools 
+
+We have designed ontology using Protégé,Protégé is a free, open source ontology editor and knowledge-base framewor
+We have used Owlready2 library of python for adding instances to the ontology in Owl Format.We used sparql format for making queries and retrieving the results received.
+
+
+# Repo structure
+
 ./ontology_editing
 ├── dance_image_ontology.owl
 ├── OntoEditModule.py
@@ -7,7 +22,7 @@
 ├── OntoQueryModule.py
 └── QueryGUI.py
 
-OntoEditModule.py (OEM):
+**OntoEditModule.py (OEM):**
 Contains functions necessary to load the ontology as Python object, modify and save it. OEM makes use of Owlready2.0 package. Functions provided by OEM:
 
 1. def add_new_dancer_instance(_dancer_name,_dancer_age,_dancer_gender)
