@@ -42,8 +42,8 @@ command to run if program contains helper info
 
 ## Authors
 
-1.Rounak Saha
-2.Swarup Padhi
+* Rounak Saha
+* Swarup Padhi
 
 ## Version History
 
