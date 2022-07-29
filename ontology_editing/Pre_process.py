@@ -23,7 +23,7 @@ def text_lowercase(text):
 
 # import the inflect library
 p = inflect.engine()
-nltk.download('omw-1.4')
+nltk.download('omw-1.4', quiet=True)
 
 # convert number into words
 
@@ -59,8 +59,8 @@ def remove_whitespace(text):
     return " ".join(text.split())
 
 
-nltk.download('stopwords')
-nltk.download('punkt')
+nltk.download('stopwords', quiet=True)
+nltk.download('punkt', quiet=True)
 
 # remove stopwords function
 
@@ -84,7 +84,7 @@ def stem_words(word_tokens):
 
 
 lemmatizer = WordNetLemmatizer()
-nltk.download('wordnet')
+nltk.download('wordnet', quiet=True)
 # lemmatize string
 
 
@@ -94,7 +94,12 @@ def lemmatize_word(word_tokens):
     lemmas = [lemmatizer.lemmatize(word, pos='v') for word in word_tokens]
     return lemmas
 
-def final_output(text):
+def process(text):
+    text = text_lowercase(text)
+    text = convert_number(text)
+    text = remove_punctuation(text)
+
+    text = remove_whitespace(text)
     res=text.split()
     st=0
     end=len(text)
@@ -103,15 +108,16 @@ def final_output(text):
         ind=text.find(word,st,end)
         list.append((ind,ind+len(word),word))
         st=ind+1
-    
-    return text,list    
+    final=[]
+    stop_words = set(stopwords.words("english"))
+    for item in list:
+      if item[2] not in stop_words:
+        final.append(item)
+    return text,final    
         
 
-text = 'dance piece showing the mythological events of Lord Krishna’s naughtiness during his childhood'
-a = text_lowercase(text)
-b = convert_number(a)
-c = remove_punctuation(b)
-print(c)
-d = remove_whitespace(c)
-text,list=final_output(d)
-print(list)
+if __name__=='__main__':
+    text = 'dance piece showing the mythological events of Lord Krishna’s naughtiness during his childhood'
+    text,list=process(text)
+    print(text)
+    print(list)

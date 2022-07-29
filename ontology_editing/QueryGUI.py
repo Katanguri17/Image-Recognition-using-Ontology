@@ -3,11 +3,59 @@ from PIL import ImageTk, Image
 from owlready2 import *
 from functools import partial
 from tkinter import ttk
+import os
+import pickle
 
-from pyparsing import col
 
 import OntoEditModule as OEM
 import OntoQueryModule as OQM
+import Pre_process as PP
+
+cwd = os.path.dirname(os.path.realpath('__file__'))
+NLP_dir=os.path.dirname(cwd)+r'/NLP'
+
+def add_to_unlearnt_dataset(text):
+    text,l=PP.process(text)
+    entities={'entities': []}
+    print('Your query:',text)
+    print('Annotate the keywords: ')
+    print('- 0 if NA')
+    print('- 1 if PERSON')
+    print('- 2 if GENDER')
+    print('- 3 if MUDRA')
+    print('- 4 if FAC')
+
+    for item in l:
+        i=int(input('+ '+str(item)+': '))
+        if i==0:
+            continue
+        elif i==1:
+            entities['entities'].append((item[0],item[1],'PERSON'))
+        elif i==2:
+            entities['entities'].append((item[0],item[1],'GENDER'))
+        elif i==3:
+            entities['entities'].append((item[0],item[1],'MUDRA'))
+        elif i==4:
+            entities['entities'].append((item[0],item[1],'FAC'))
+
+    print('Adding data sample:',(text,entities))
+    f=open(NLP_dir+r'/unlearnt_bin','rb')
+    train=pickle.load(f)
+    f.close()
+
+    train+=(text,entities)
+    f=open(NLP_dir+r'/unlearnt_bin','wb')
+    pickle.dump(train,f)
+    f.close()
+
+    f=open(NLP_dir+r'/.unlearnt_samples_cnt.txt','r')
+    new_sample_cnt=int(f.read())+1
+    f.close()
+
+    f=open(NLP_dir+r'/.unlearnt_samples_cnt.txt','w')
+    f.write(str(new_sample_cnt))
+    f.close()
+
 
 
 def show_asam_menu():
@@ -149,6 +197,11 @@ def submit_function(gender_val, sam_val, lefthand_val, righthand_val):
         display_img_label.pack(padx=10)
         i += 1
 
+    if isOpen:
+        response=input('Will you help us by annotating your free-form query, this will help us give better results next time ?(y/n): ')
+        if response.lower()=='y':
+            add_to_unlearnt_dataset(free_form_entry.get())
+
 
 
 if __name__ == '__main__':
@@ -272,4 +325,4 @@ if __name__ == '__main__':
     submit_button = Button(root, text='Submit',command=partial(submit_function,gender_val, sam_val, lefthand_val, righthand_val))
     submit_button.grid(row=4, column=0,padx=5,pady=5,ipady=10)
 
-    tight_query.mainloop()
+    root.mainloop()

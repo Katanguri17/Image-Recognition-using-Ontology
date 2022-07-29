@@ -52,7 +52,7 @@ def generate_open_query(free_form_text):
 	if DancerName is not None:
 		query=query+"\tFILTER regex(?dancer_name,'"+DancerName+"','i')\n"
 	if DancerGender is not None:
-		query+query+"\tFILTER regex(?dancer_gender,'"+DancerGender+"','i')\n"
+		query=query+"\tFILTER regex(?dancer_gender,'"+DancerGender+"','i')\n"
 
 	if len(AsamMudList)>0:
 		asam_filter_condition=""

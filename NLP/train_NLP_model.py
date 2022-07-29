@@ -90,6 +90,7 @@ def command():
             train_nlp_model(train)
 
             f=open(unlearnt_query_datset,'wb')
+            pickle.dump([],f)
             f.close()
 
             f=open(unlearnt_samples_cnt,'wb')
