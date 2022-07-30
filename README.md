@@ -26,9 +26,10 @@ spacy==3.4.0
 
 ## Repository structure:
 .
-├── ontology_editing
-├── NLP
+├── ontology_editing  
+├── NLP  
 └── data
+
 
 ## ONTOLOGY:
 
