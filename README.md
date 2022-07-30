@@ -92,7 +92,7 @@ Also possible to enter a new DancerName that will be appended to the list of nam
 
 Create a new dancer individual (different from any other previously entered dancer in the ontology), with name, age and gender as input.
 
-#### Enter dance name:
+Enter dance name:
 
 For hastamudra annotation, it is allowed to enter either one Samyukta hastamudra from the dropdown or two asamyukta mudras for left and right hand respectively
 
