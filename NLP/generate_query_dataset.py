@@ -287,6 +287,6 @@ def save_dataset(n):
 
 
 if __name__=='__main__':
-    save_dataset()
+    save_dataset(100)
     
 
