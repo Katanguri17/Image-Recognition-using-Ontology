@@ -4,7 +4,7 @@ import os
 import PIL.Image
 
 cwd = os.path.dirname(os.path.realpath('__file__'))
-onto_filepath=cwd+r'/dance_dummy.owl'
+onto_filepath=cwd+r'/dance_image_ontology.owl'
 onto = get_ontology('file://'+onto_filepath).load()
 
 with onto:
