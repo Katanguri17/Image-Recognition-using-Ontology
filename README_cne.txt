@@ -1,8 +1,17 @@
 Following is a description of:
-1. File structure
-2. Purpose, input, output of each file and its functions
+1. Dependencies
+2. Repo structure
+3. Purpose, input, output of each file and its functions
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Overall file structure:
+Dependencies:
+inflect==5.6.2
+nltk==3.7
+Owlready2==0.38
+pandas==1.4.2
+Pillow==9.2.0
+spacy==3.4.0
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Overall repo structure:
 .
 ├── ontology_editing
 ├── NLP
