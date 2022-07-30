@@ -1,8 +1,6 @@
-# Project Title
+# Ontology based Image Retrieval System
 
-We have designed an Ontology based Video Retrieval System.An ontology-based knowledge representation could be used for content analysis and concept recognition, for reasoning
-processes and for enabling user-friendly and intelligent multimedia content
-search and retrieval.
+We have designed an Ontology based Image Retrieval System.An ontology-based knowledge representation could be used for content analysis and concept recognition, for reasoning processes and for enabling user-friendly and intelligent multimedia content search and retrieval.
 
 ## Following is a description of:
 
@@ -12,16 +10,11 @@ search and retrieval.
 
 ## Dependencies:
 
-inflect==5.6.2
-
-nltk==3.7
-
-Owlready2==0.38
-
-pandas==1.4.2
-
-Pillow==9.2.0
-
+inflect==5.6.2  
+nltk==3.7  
+Owlready2==0.38  
+pandas==1.4.2  
+Pillow==9.2.0  
 spacy==3.4.0
 
 ## Repository structure:
@@ -51,16 +44,16 @@ write here ontology_editing tree
 
 ## ontology_editing:
 
-├── AddImageAnnotationGUI.py
-├── costume_list.tsv
-├── dance_dummy.owl
-├── dance_image_ontology.owl
-├── dancer_list.tsv
-├── generate_dancer.py
-├── MudraMatch.py
-├── OntoEditModule.py
-├── OntoQueryModule.py
-├── Pre_process.py
+├── AddImageAnnotationGUI.py  
+├── costume_list.tsv  
+├── dance_dummy.owl  
+├── dance_image_ontology.owl  
+├── dancer_list.tsv  
+├── generate_dancer.py  
+├── MudraMatch.py  
+├── OntoEditModule.py  
+├── OntoQueryModule.py  
+├── Pre_process.py  
 └── QueryGUI.py
 
 
@@ -103,14 +96,6 @@ Create a new dancer individual (different from any other previously entered danc
 
 For hastamudra annotation, it is allowed to enter either one Samyukta hastamudra from the dropdown or two asamyukta mudras for left and right hand respectively
 
-![ScreenShot](https://github.com/rounaksaha12/Ontology-editing-and-Query-processing/blob/main/screenshots_to_add/Screenshot%20from%202022-07-29%2010-52-16.png)
-![ScreenShot](https://github.com/rounaksaha12/Ontology-editing-and-Query-processing/blob/main/screenshots_to_add/Screenshot%20from%202022-07-29%2010-53-00.png)
-![ScreenShot](https://github.com/rounaksaha12/Ontology-editing-and-Query-processing/blob/main/screenshots_to_add/Screenshot%20from%202022-07-29%2010-53-24.png)
-![ScreenShot](https://github.com/rounaksaha12/Ontology-editing-and-Query-processing/blob/main/screenshots_to_add/Screenshot%20from%202022-07-29%2010-53-55.png)
-![ScreenShot](https://github.com/rounaksaha12/Ontology-editing-and-Query-processing/blob/main/screenshots_to_add/Screenshot%20from%202022-07-29%2010-54-17.png)
-![ScreenShot](https://github.com/rounaksaha12/Ontology-editing-and-Query-processing/blob/main/screenshots_to_add/Screenshot%20from%202022-07-29%2011-12-34.png)
-
-
 ### OntoQueryModule.py (OQM):
 
 Contains functions for generating **SPARQL** queries given the requirements of the search.
@@ -150,19 +135,14 @@ Go to ontology_editing directory and run
 python3 QueryGUI.py
 ```
 
-![ScreenShot](https://github.com/rounaksaha12/Ontology-editing-and-Query-processing/blob/main/screenshots_to_add/example_query_use_cases/Screenshot%20from%202022-07-29%2023-25-01.png)
-![ScreenShot](https://github.com/rounaksaha12/Ontology-editing-and-Query-processing/blob/main/screenshots_to_add/example_query_use_cases/Screenshot%20from%202022-07-29%2023-26-25.png)
-![ScreenShot](https://github.com/rounaksaha12/Ontology-editing-and-Query-processing/blob/main/screenshots_to_add/example_query_use_cases/Screenshot%20from%202022-07-29%2023-41-10.png)
-![ScreenShot](https://github.com/rounaksaha12/Ontology-editing-and-Query-processing/blob/main/screenshots_to_add/example_query_use_cases/Screenshot%20from%202022-07-29%2023-41-49.png)
-
 When the user makes an open query, (s)he is given the option to manually annotate the text he entered for the query. It has nothing to to with how the results of this particular query is executed. But a user-entered search text is a potentially useful data sample and if (s)he choses to help up by annotating it, the search text along with the annotations are safely stored within a binary file called 'unlearnt_bin' in the NLP directory. Samples present in this file represent data that is available but hasn't yet been used to train our NER model. The count of such samples is stored in hidden file '.unlearnt_samples_cnt.txt' within the same directory. NLP directory also contains an executable python script **train_NLP_model.py** which can be used to train the model with these unlearnt samples followed by which 'unlearnt_bin' is cleaned and unlearnt samples count is reduced to 0.
 
 ## NLP:
 
-├── custom_nlp_for_dance
-├── train_NLP_model.py
-├── generate_query_dataset.py
-├── dataset_bin
+├── custom_nlp_for_dance  
+├── train_NLP_model.py  
+├── generate_query_dataset.py  
+├── dataset_bin  
 └── unlearnt_bin
 
 The spaCy library provides features for Named Entity Recognition. However the pre-trained pipelines aren't fully suitable for our problem, since all the bharatnatyam and hastamudra specific terminology in general are not standard English words. However the NER pipeline can be trained for custom purposes with sufficient annotated dataset. Since no such dataset is readily available we have tried to automate the process of generating sample queries of some specific structures along with annotations.
