@@ -28,7 +28,7 @@ spacy==3.4.0
 
 The domain knowledge related to hastamudra is maintained as an **OWL ontology**. It is stored in **rdfxml** format as dance_image_ontology.owl. The ontology IRI is: [http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology](http://www.semanticweb.org/rounak/ontologies/2022/5/dance_image_ontology). The ontology is developed using **Protégé**. The different classes with their descriptions and properties are:
 
-![ScreenShot](https://github.com/rounaksaha12/Ontology-editing-and-Query-processing/blob/main/screenshots_to_add/Screenshot%20from%202022-07-29%2010-54-17.png)
+![ScreenShot](https://github.com/rounaksaha12/Ontology-editing-and-Query-processing/blob/main/screenshots_to_add/Screenshot%20from%202022-07-29%2022-34-55.png)
 ![ScreenShot](https://github.com/rounaksaha12/Ontology-editing-and-Query-processing/blob/main/screenshots_to_add/Screenshot%20from%202022-07-29%2022-35-36.png)
 ![ScreenShot](https://github.com/rounaksaha12/Ontology-editing-and-Query-processing/blob/main/screenshots_to_add/Screenshot%20from%202022-07-29%2022-35-58.png)
 ![ScreenShot](https://github.com/rounaksaha12/Ontology-editing-and-Query-processing/blob/main/screenshots_to_add/Screenshot%20from%202022-07-29%2022-36-24.png)
