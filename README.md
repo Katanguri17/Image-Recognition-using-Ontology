@@ -149,6 +149,7 @@ When the user makes an open query, (s)he is given the option to manually annotat
 ## NLP
 
 ./NLP
+
 ├── custom_nlp_for_dance
 ├── train_NLP_model.py
 ├── generate_query_dataset.py
