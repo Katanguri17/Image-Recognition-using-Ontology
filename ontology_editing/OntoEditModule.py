@@ -82,7 +82,7 @@ def add_new_content_instance(_image_instance,_dancer_instance,_static_instance):
     existing_content=onto.Content.instances()
     new_content=onto.Content('Content'+str(len(existing_content)))
     new_content.hasImage=_image_instance
-    new_content.hasDancer.append(_dancer_instance)
+    new_content.hasDancer=_dancer_instance
     new_content.hasStatic=_static_instance
     onto.save(file = onto_filepath, format = "rdfxml")
     return new_content
