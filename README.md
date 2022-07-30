@@ -54,6 +54,19 @@ write here ontology_editing tree
 
 ./ontology_editing
 
+├── AddImageAnnotationGUI.py
+├── costume_list.tsv
+├── dance_dummy.owl
+├── dance_image_ontology.owl
+├── dancer_list.tsv
+├── generate_dancer.py
+├── MudraMatch.py
+├── OntoEditModule.py
+├── OntoQueryModule.py
+├── Pre_process.py
+└── QueryGUI.py
+
+
 ### OntoEditModule.py (OEM):
 
 Contains functions necessary to load the ontology as Python object, modify and save it, which are imported in AddImageAnnotationGUI.py. OEM makes use of Owlready2.0 package.
