@@ -25,7 +25,6 @@ Pillow==9.2.0
 spacy==3.4.0
 
 ## Repository structure:
-.
 
 ├── ontology_editing  
 ├── NLP  
@@ -51,8 +50,6 @@ Note that all data properties **except hasDancerName and hasDanceName are functi
 write here ontology_editing tree
 
 ## ontology_editing
-
-./ontology_editing
 
 ├── AddImageAnnotationGUI.py
 ├── costume_list.tsv
@@ -161,8 +158,6 @@ python3 QueryGUI.py
 When the user makes an open query, (s)he is given the option to manually annotate the text he entered for the query. It has nothing to to with how the results of this particular query is executed. But a user-entered search text is a potentially useful data sample and if (s)he choses to help up by annotating it, the search text along with the annotations are safely stored within a binary file called 'unlearnt_bin' in the NLP directory. Samples present in this file represent data that is available but hasn't yet been used to train our NER model. The count of such samples is stored in hidden file '.unlearnt_samples_cnt.txt' within the same directory. NLP directory also contains an executable python script **train_NLP_model.py** which can be used to train the model with these unlearnt samples followed by which 'unlearnt_bin' is cleaned and unlearnt samples count is reduced to 0.
 
 ## NLP
-
-./NLP
 
 ├── custom_nlp_for_dance
 ├── train_NLP_model.py
